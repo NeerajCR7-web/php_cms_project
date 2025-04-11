@@ -31,7 +31,7 @@ if(!isset($page_title)) {
         <div class="admin-sidebar">
             <div class="admin-brand">
                 <i class="fas fa-cog"></i>
-                <h1>Portfolio CMS</h1>
+                <h1>TEAM ACE</h1>
             </div>
             
             <ul class="admin-menu">
@@ -73,7 +73,7 @@ if(!isset($page_title)) {
             <!-- Admin Header -->
             <header class="admin-header">
                 <div class="admin-user">
-                    <img src="images/avatar.jpg" alt="User Avatar">
+                    <img src="images/profile.png" alt="User Avatar">
                     <div class="admin-user-info">
                         <h4><?php echo htmlspecialchars($_SESSION['email']); ?></h4>
                         <small>Administrator</small>

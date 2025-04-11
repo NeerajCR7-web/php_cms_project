@@ -1,38 +1,36 @@
 <?php
 
-include( 'includes/database.php' );
-include( 'includes/config.php' );
-include( 'includes/functions.php' );
+include('includes/database.php');
+include('includes/config.php');
+include('includes/functions.php');
 
 secure();
 
-if( isset( $_POST['name'] ) )
+if(isset($_POST['name']))
 {
-  
-  if( $_POST['name'] and $_POST['url'] and $_POST['percent'] )
+  if($_POST['name'] and $_POST['url'] and $_POST['percent'])
   {
-    
     $query = 'INSERT INTO skills (
         name,
         url,
+        logo_url,
         percent
       ) VALUES (
-         "'.mysqli_real_escape_string( $connect, $_POST['name'] ).'",
-         "'.mysqli_real_escape_string( $connect, $_POST['url'] ).'",
-         "'.mysqli_real_escape_string( $connect, $_POST['percent'] ).'"
+         "'.mysqli_real_escape_string($connect, $_POST['name']).'",
+         "'.mysqli_real_escape_string($connect, $_POST['url']).'",
+         "'.mysqli_real_escape_string($connect, $_POST['logo_url']).'",
+         "'.mysqli_real_escape_string($connect, $_POST['percent']).'"
       )';
-    mysqli_query( $connect, $query );
+    mysqli_query($connect, $query);
     
-    set_message( 'Skill has been added' );
-    
+    set_message('Skill has been added');
   }
   
-  header( 'Location: skills.php' );
+  header('Location: skills.php');
   die();
-  
 }
 
-include( 'includes/header.php' );
+include('includes/header.php');
 
 ?>
 
@@ -50,6 +48,11 @@ include( 'includes/header.php' );
   
   <br>
   
+  <label for="logo_url">Logo URL:</label>
+  <input type="text" name="logo_url" id="logo_url">
+  
+  <br>
+  
   <label for="percent">Percent:</label>
   <input type="text" name="percent" id="percent">
   
@@ -59,11 +62,8 @@ include( 'includes/header.php' );
   
 </form>
 
-<p><a href="projects.php"><i class="fas fa-arrow-circle-left"></i> Return to Skill List</a></p>
-
+<p><a href="skills.php"><i class="fas fa-arrow-circle-left"></i> Return to Skill List</a></p>
 
 <?php
-
-include( 'includes/footer.php' );
-
+include('includes/footer.php');
 ?>
