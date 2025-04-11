@@ -8,7 +8,7 @@ if(!isset($page_title)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($page_title); ?> - Portfolio CMS</title>
+    <title><?php echo htmlspecialchars($page_title); ?> - ACE</title>
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -23,7 +23,41 @@ if(!isset($page_title)) {
     <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
     
     <!-- Favicon -->
-    <link rel="icon" href="images/profile.png" type="image/png">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <style>
+        /* Avatar Styles */
+        .admin-user img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #6C63FF;
+        }
+
+        .avatar-fallback {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            border-radius: 50%;
+            color: #6C63FF;
+            font-size: 24px;
+        }
+
+        .admin-user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Ensure the profile image path is correct */
+        .admin-user img {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="admin-container">
@@ -72,13 +106,26 @@ if(!isset($page_title)) {
         <div class="admin-main">
             <!-- Admin Header -->
             <header class="admin-header">
-                <div class="admin-user">
-                    <img src="images/profile.png" alt="User Avatar">
-                    <div class="admin-user-info">
-                        <h4><?php echo htmlspecialchars($_SESSION['email']); ?></h4>
-                        <small>Administrator</small>
-                    </div>
-                </div>
+            <!-- Replace the admin-user div with this -->
+<div class="admin-user">
+    <?php
+    if(isset($_SESSION['id'])) {
+        $query = 'SELECT photo FROM users WHERE id = '.$_SESSION['id'];
+        $result = mysqli_query($connect, $query);
+        $user = mysqli_fetch_assoc($result);
+        
+        if(!empty($user['photo'])) {
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($user['photo']).'" alt="User Avatar">';
+        } else {
+            echo '<div class="avatar-fallback"><i class="fas fa-user-circle"></i></div>';
+        }
+    }
+    ?>
+    <div class="admin-user-info">
+        <h4><?php echo htmlspecialchars($_SESSION['email']); ?></h4>
+        <small>Administrator</small>
+    </div>
+</div>
                 <a href="logout.php" class="admin-logout">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>

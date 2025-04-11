@@ -32,29 +32,30 @@ include('includes/header.php');
 <h2>Add Certificate</h2>
 
 <form method="post">
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+    </div>
     
-    <br>
+    <div class="form-group">
+        <label for="organization">Organization:</label>
+        <input type="text" name="organization" id="organization" required>
+    </div>
     
-    <label for="organization">Organization:</label>
-    <input type="text" name="organization" id="organization">
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" required>
+    </div>
     
-    <br>
+    <div class="form-group">
+        <label for="url">Certificate URL (optional):</label>
+        <input type="url" name="url" id="url">
+    </div>
     
-    <label for="date">Date:</label>
-    <input type="date" name="date" id="date">
-    
-    <br>
-    
-    <label for="url">URL:</label>
-    <input type="text" name="url" id="url">
-    
-    <br>
-    
-    <input type="submit" value="Add Certificate">
+    <div class="form-actions">
+        <input type="submit" value="Add Certificate" class="btn-save">
+        <a href="certificates.php" class="btn-cancel">Cancel</a>
+    </div>
 </form>
-
-<p><a href="certificates.php"><i class="fas fa-arrow-circle-left"></i> Return to Certificate List</a></p>
 
 <?php include('includes/footer.php'); ?>

@@ -15,7 +15,7 @@ include('includes/header.php');
                 <i class="fas fa-star"></i>
                 <span>TEAM ACE</span>
             </div>
-            <h1>Welcome to Your Admin Dashboard</h1>
+            <h1>Team ACE Welcomes You</h1>
             <p class="tagline">Where Excellence Meets Innovation</p>
             <div class="team-motto">
                 <p>"Achieving, Creating, Excelling - Together We Build Digital Masterpieces"</p>
@@ -26,34 +26,27 @@ include('includes/header.php');
         </div>
     </div>
 
-    <!-- Stats Cards -->
+    <!-- Stats Cards - Replaced Section -->
     <div class="stats-container">
-        <?php
-        $projects = mysqli_fetch_assoc(mysqli_query($connect, "SELECT COUNT(*) as count FROM projects"))['count'];
-        $members = mysqli_fetch_assoc(mysqli_query($connect, "SELECT COUNT(*) as count FROM team_members"))['count'];
-        $skills = mysqli_fetch_assoc(mysqli_query($connect, "SELECT COUNT(*) as count FROM skills"))['count'];
-        $certificates = mysqli_fetch_assoc(mysqli_query($connect, "SELECT COUNT(*) as count FROM certificates"))['count'];
-        ?>
-        
         <div class="stat-card">
-            <i class="fas fa-project-diagram"></i>
-            <h3><?php echo $projects; ?></h3>
-            <p>Projects</p>
+            <i class="fas fa-code-branch"></i>
+            <h3>20+</h3>
+            <p>Projects Completed</p>
         </div>
         <div class="stat-card">
             <i class="fas fa-users"></i>
-            <h3><?php echo $members; ?></h3>
+            <h3>3</h3>
             <p>Team Members</p>
         </div>
         <div class="stat-card">
-            <i class="fas fa-code"></i>
-            <h3><?php echo $skills; ?></h3>
-            <p>Skills</p>
+            <i class="fas fa-trophy"></i>
+            <h3>12</h3>
+            <p>Awards Won</p>
         </div>
         <div class="stat-card">
-            <i class="fas fa-certificate"></i>
-            <h3><?php echo $certificates; ?></h3>
-            <p>Certificates</p>
+            <i class="fas fa-smile"></i>
+            <h3>100%</h3> 
+            <p>Client Satisfaction</p>
         </div>
     </div>
 
@@ -130,10 +123,9 @@ include('includes/header.php');
         <h2>Recent Activity</h2>
         <div class="activity-list">
             <?php
-            // Example activity - you would replace with actual recent changes from your database
             $activities = [
-                ['icon' => 'fas fa-project-diagram', 'text' => 'Added new project "E-commerce Platform"', 'time' => '2 hours ago'],
-                ['icon' => 'fas fa-user-plus', 'text' => 'New team member Sarah joined', 'time' => '1 day ago'],
+                ['icon' => 'fas fa-project-diagram', 'text' => 'Added new project "IPL Award Management System"', 'time' => '2 hours ago'],
+                ['icon' => 'fas fa-user-plus', 'text' => 'New team member Harsh joined', 'time' => '1 day ago'],
                 ['icon' => 'fas fa-certificate', 'text' => 'Updated AWS Certification', 'time' => '2 days ago'],
                 ['icon' => 'fas fa-code', 'text' => 'Added React skill to portfolio', 'time' => '3 days ago']
             ];
@@ -229,10 +221,10 @@ include('includes/header.php');
         border-left: 4px solid var(--warning);
     }
     
-    /* Stats Cards */
+    /* Stats Cards - Updated Section */
     .stats-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         margin-bottom: 40px;
     }
@@ -240,35 +232,35 @@ include('includes/header.php');
     .stat-card {
         background: white;
         padding: 25px;
-        border-radius: 12px;
+        border-radius: 10px;
         text-align: center;
-        box-shadow: var(--shadow-md);
-        transition: var(--transition);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
     }
     
     .stat-card:hover {
         transform: translateY(-5px);
-        box-shadow: var(--shadow-lg);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
     
     .stat-card i {
-        font-size: 2rem;
+        font-size: 2.5rem;
         color: var(--primary);
         margin-bottom: 15px;
     }
     
     .stat-card h3 {
-        font-size: 2rem;
+        font-size: 2.2rem;
         color: var(--dark);
         margin-bottom: 5px;
     }
     
     .stat-card p {
         color: var(--gray);
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
-    /* Team Preview */
+    /* Rest of your existing styles remain unchanged */
     .team-preview {
         margin-bottom: 40px;
     }
@@ -351,7 +343,6 @@ include('includes/header.php');
         transform: translateY(-2px);
     }
     
-    /* Quick Links */
     .quick-links {
         margin-bottom: 40px;
     }
@@ -407,7 +398,10 @@ include('includes/header.php');
         opacity: 0.8;
     }
     
-    /* Recent Activity */
+    .recent-activity {
+        margin-bottom: 40px;
+    }
+    
     .recent-activity h2 {
         margin-bottom: 20px;
         color: var(--dark);
@@ -454,7 +448,6 @@ include('includes/header.php');
         font-size: 0.8rem;
     }
     
-    /* Responsive Design */
     @media (max-width: 992px) {
         .dashboard-hero {
             flex-direction: column;
@@ -468,13 +461,13 @@ include('includes/header.php');
         .hero-image {
             width: 100%;
         }
+        
+        .stats-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
     
     @media (max-width: 768px) {
-        .stats-container {
-            grid-template-columns: 1fr 1fr;
-        }
-        
         .team-grid {
             grid-template-columns: 1fr;
         }
