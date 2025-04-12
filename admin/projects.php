@@ -9,7 +9,7 @@ if(isset($_GET['delete'])) {
     $query = 'DELETE FROM projects WHERE id = '.$_GET['delete'].' LIMIT 1';
     mysqli_query($connect, $query);
     
-    // Reset auto-increment and renumber IDs
+    // resets the count to 0
     $query = 'SET @count = 0';
     mysqli_query($connect, $query);
     $query = 'UPDATE projects SET projects.id = @count:= @count + 1';

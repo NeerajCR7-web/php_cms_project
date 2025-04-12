@@ -12,10 +12,8 @@ if(!isset($_GET['id'])) {
 
 if(isset($_FILES['photo'])) {
     if($_FILES['photo']['error'] == 0) {
-        // Read the file
         $photo = file_get_contents($_FILES['photo']['tmp_name']);
         
-        // Update database with binary data
         $query = 'UPDATE projects SET photo = ? WHERE id = ? LIMIT 1';
         $stmt = mysqli_prepare($connect, $query);
         mysqli_stmt_bind_param($stmt, "si", $photo, $_GET['id']);

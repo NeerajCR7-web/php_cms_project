@@ -24,15 +24,15 @@ include('includes/header.php');
 
 .team-image {
     width: 100%;
-    height: 200px; /* Fixed height for images */
+    height: 200px; 
     overflow: hidden;
 }
 
 .team-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures images maintain aspect ratio */
-    object-position: center; /* Centers the image */
+    object-fit: cover; 
+    object-position: center; 
 }
 
 .team-info {

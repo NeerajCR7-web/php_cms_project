@@ -10,13 +10,10 @@ if(!isset($page_title)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($page_title); ?> - ACE</title>
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-    <!-- Main CSS -->
     <link href="styles.css" rel="stylesheet">
     
     <!-- CKEditor -->
@@ -26,7 +23,6 @@ if(!isset($page_title)) {
     <link rel="icon" href="images/favicon.png" type="image/png">
     
     <style>
-        /* Avatar Styles */
         .admin-user img {
             width: 45px;
             height: 45px;
@@ -53,7 +49,6 @@ if(!isset($page_title)) {
             gap: 15px;
         }
         
-        /* Ensure the profile image path is correct */
         .admin-user img {
             display: block;
         }
@@ -61,7 +56,6 @@ if(!isset($page_title)) {
 </head>
 <body>
     <div class="admin-container">
-        <!-- Sidebar -->
         <div class="admin-sidebar">
             <div class="admin-brand">
                 <i class="fas fa-cog"></i>
@@ -102,11 +96,8 @@ if(!isset($page_title)) {
             </ul>
         </div>
 
-        <!-- Main Content -->
         <div class="admin-main">
-            <!-- Admin Header -->
             <header class="admin-header">
-            <!-- Replace the admin-user div with this -->
 <div class="admin-user">
     <?php
     if(isset($_SESSION['id'])) {
@@ -131,5 +122,4 @@ if(!isset($page_title)) {
                 </a>
             </header>
 
-            <!-- Page Content will be inserted here -->
             <main class="content-wrapper">

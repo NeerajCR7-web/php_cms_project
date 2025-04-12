@@ -11,8 +11,7 @@ if(isset($_POST['name']))
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     
-    // Check if image file is actual image
-    $check = getimagesize($_FILES["image"]["tmp_name"]);
+    $check = getimagesize($_FILES["image"]["tmp_name"]); //https://stackoverflow.com/questions/3121547/why-ifgetimagesize-filesimagefiletmp-name-doesnt-work
     if($check === false) {
         set_message('File is not an image');
         header('Location: team_members.php');
@@ -20,15 +19,14 @@ if(isset($_POST['name']))
     }
     
     // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") { //https://stackoverflow.com/questions/41866743/php-check-if-uploaded-file-is-an-image
         set_message('Only JPG, JPEG, PNG files are allowed');
         header('Location: team_members.php');
         die();
     }
     
-    // Upload file
     $new_filename = uniqid().'.'.$imageFileType;
-    if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_dir.$new_filename))
+    if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_dir.$new_filename)) // https://stackoverflow.com/questions/1673393/php-file-upload
     {
         $query = 'INSERT INTO team_members (
             name,

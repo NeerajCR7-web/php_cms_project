@@ -5,7 +5,7 @@ include('includes/functions.php');
 
 secure();
 
-if(isset($_POST['first'])) {
+if(isset($_POST['first'])) { // https://stackoverflow.com/questions/30038026/upload-form-not-displaying-ok-after-ifemptyname?noredirect=1&lq=1
     $photo = null;
     if(isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
         $photo = file_get_contents($_FILES['photo']['tmp_name']);

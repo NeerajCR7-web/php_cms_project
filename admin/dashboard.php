@@ -8,7 +8,6 @@ include('includes/header.php');
 ?>
 
 <div class="dashboard-container">
-    <!-- Hero Section -->
     <div class="dashboard-hero">
         <div class="hero-content">
             <div class="team-badge pulse">
@@ -26,7 +25,6 @@ include('includes/header.php');
         </div>
     </div>
 
-    <!-- Stats Cards - Replaced Section -->
     <div class="stats-container">
         <div class="stat-card">
             <i class="fas fa-code-branch"></i>
@@ -50,7 +48,7 @@ include('includes/header.php');
         </div>
     </div>
 
-    <!-- Team Preview -->
+    <!-- Team -->
     <div class="team-preview">
         <h2>Meet Team ACE</h2>
         <div class="team-grid">
@@ -81,7 +79,7 @@ include('includes/header.php');
         </div>
     </div>
 
-    <!-- Quick Management -->
+    <!-- Navigation -->
     <div class="quick-links">
         <h2>Quick Management</h2>
         <div class="management-grid">
@@ -145,7 +143,6 @@ include('includes/header.php');
 </div>
 
 <style>
-    /* Dashboard Styles */
     .dashboard-container {
         max-width: 1400px;
         margin: 0 auto;
@@ -221,7 +218,6 @@ include('includes/header.php');
         border-left: 4px solid var(--warning);
     }
     
-    /* Stats Cards - Updated Section */
     .stats-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -260,7 +256,6 @@ include('includes/header.php');
         font-size: 1rem;
     }
     
-    /* Rest of your existing styles remain unchanged */
     .team-preview {
         margin-bottom: 40px;
     }

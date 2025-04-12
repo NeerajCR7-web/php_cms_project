@@ -23,7 +23,7 @@ if(isset($_POST['name']))
         'github' => mysqli_real_escape_string($connect, $_POST['github'])
     ];
     
-    if(!empty($_FILES["image"]["name"])) {
+    if(!empty($_FILES["image"]["name"])) { // https://stackoverflow.com/questions/48181119/how-to-upload-image-in-directory-and-database-in-php
         $target_dir = "../images/team/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
