@@ -68,7 +68,7 @@ include('admin/includes/functions.php');
     <main class="admin-main">
       <!-- PROJECTS -->
       <section id="projects" class="section-wrapper">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">Our Projects</h2>
         <div class="cards-grid">
           <?php
             $q   = 'SELECT * FROM projects ORDER BY date DESC';
