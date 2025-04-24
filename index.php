@@ -169,12 +169,17 @@ include('admin/includes/functions.php');
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>© 2025 Team ACE</p>
-    <div class="social-links">
-      <a href="https://github.com/NeerajCR7-web/php_cms_project"><i class="fa fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/neeraj-k-89a460114/"><i class="fa fa-linkedin"></i></a>
-    </div>
-  </footer>
+  <p>© 2025 Team ACE</p>
+  <div class="footer-buttons">
+    <a href="mailto:youremail@example.com" class="btn-email">
+      <i class="fa fa-envelope"></i>Email Us
+    </a>
+    <a href="https://discord.gg/your-discord-code" target="_blank" class="btn-discord"><i class="fa fa-discord"></i>Discord</a>
+    <a href="https://github.com/NeerajCR7-web/php_cms_project" class="btn-discord"><i class="fa fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/neeraj-k-89a460114/" class="btn-discord"><i class="fa fa-linkedin"></i></a>
+  </div>
+</footer>
+
 
   <!-- JS: menu toggle & active-link highlighting -->
   <script>
