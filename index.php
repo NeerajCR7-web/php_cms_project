@@ -95,7 +95,7 @@ include('admin/includes/functions.php');
         </div>
       </section>
 
-      <!-- CERTIFICATES -->
+      <!-- CERTIFICATES (narrower layout) -->
       <section id="certificates" class="section-wrapper certificates-section">
         <h2 class="section-title">Certificates</h2>
         <div class="cards-grid">
@@ -159,8 +159,11 @@ include('admin/includes/functions.php');
   <section id="contact" class="contact-section">
     <div class="section-wrapper">
       <h2 class="section-title">Let’s Connect</h2>
-      <p>Looking for a web developer or just want to say hi? Drop us a line!</p>
-      <a href="mailto:youremail@example.com" class="btn btn-primary">Email Us</a>
+      <p>Have a question? Drop it below and we’ll get right back to you.</p>
+      <form action="mailto:youremail@example.com" method="post" enctype="text/plain" class="contact-form">
+        <textarea name="message" placeholder="Your message..." required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
     </div>
   </section>
 
