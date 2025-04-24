@@ -112,7 +112,7 @@ include( 'includes/header.php' );
 </style>
 
 <div class="login-container">
-  <div class="login-title">Welcome Back</div>
+  <div class="login-title">Welcome </div>
   
   <form method="post">
     <div class="form-group">

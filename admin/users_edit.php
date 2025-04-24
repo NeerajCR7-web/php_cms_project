@@ -11,7 +11,7 @@ if(!isset($_GET['id'])) {
 }
 
 if(isset($_POST['first'])) {
-    // Handle photo upload
+    // Handles photo upload
     $photo = null;
     if(isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
         $photo = file_get_contents($_FILES['photo']['tmp_name']);
