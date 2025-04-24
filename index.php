@@ -43,7 +43,7 @@ include('admin/includes/functions.php');
         <a href="#projects" class="btn btn-primary">Explore Our Work</a>
       </div>
       <div class="hero-image">
-        <img src="admin/images/team/team-collab.jpg" alt="Our Web Dev Team">
+        <img src="admin/images/team/team-banner.jpg" alt="Our Web Dev Team">
       </div>
     </div>
   </section>
